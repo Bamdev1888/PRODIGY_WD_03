@@ -1,0 +1,114 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.mode-selection button, #reset {
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mode-selection button:nth-child(1) { /* Two Player Button */
+    background-color: #007BFF;
+    color: white;
+}
+
+.mode-selection button:nth-child(2) { /* AI Button */
+    background-color: #28A745;
+    color: white;
+}
+
+#reset {
+    background-color: #DC3545;
+    color: white;
+}
+
+.mode-selection button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+#reset:hover {
+    background-color: #C82333;
+    transform: scale(1.05);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 320px;
+}
+
+.cell {
+    background: white;
+    border: 2px solid black;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    background: #ddd;
+    transform: scale(1.05);
+}
+
+.cell.X {
+    color: red;
+}
+
+.cell.O {
+    color: green;
+}
+
+.win-cell {
+    background-color: yellow !important; /* Highlight winning cells */
+}
+
+#status {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Fireworks Effect */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
